@@ -2,59 +2,52 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Untitled</title>
+    <title>Hamilton Lottery Simulator</title>
     <script src="libraries/p5.js" type="text/javascript"></script>
-
     <script src="libraries/p5.dom.js" type="text/javascript"></script>
     <script src="libraries/p5.sound.js" type="text/javascript"></script>
-
     <script src="sketch.js" type="text/javascript"></script>
-
     <style>
       body {
         padding: 20px;
       }
-    </style>
 
+      #entrants {
+        background-color: #CCC;
+        padding: 2px;
+      }
+
+    </style>
   </head>
   <body>
     <h1>Hamilton Lottery Simulator</h1>
-
     <p>
-      This simulator assumes 10 pairs of tickets available each night with 50,000 people entering each lottery.
-    </p>
-
-    <p>
-      For each entry you have a 1 in 5,000 chance of winning.
+      This simulator assumes 10 pairs of tickets available each night with <span id="entrants" contenteditable>50000</span> people entering each lottery.
     </p>
 
     <p>
-      If you enter 3,500 times, you have a ~50% chance of winning at least once.
+      You have a 1 in <span id="chance">5,000</span> chance of winning.
     </p>
 
     <p>
-      If you enter 23,000 times, you have a ~99% chance of winning at least once.
+      In order to have a 99% chance of winning the lottery at least one time, you must play ~<span id="99percent">23,000</span>.
     </p>
 
     <p>
-      It is estimated that this simulator will take around 6 and 1/2 minutes for you to win.
+      <button id="start">start entering lottery</button>
     </p>
 
     <p>
-      <button id="lottery">start entering</button>
+      You have played <span id="total">0</span> times.
+    </p>
+    <p id = "results">
+
     </p>
 
-    <p>
-      You have entered <span id="number">0</span> times.<br/>
-    </p>
 
-    <p>
-     <span id="minutes">0</span> minutes and <span id="seconds">0</span> seconds have passed.<br/>
-    </p>
 
-    <p id ="status">
-      Try again.
-    </p>
+
+
 
   </body>
 </html>

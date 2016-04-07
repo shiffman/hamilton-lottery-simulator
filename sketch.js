@@ -1,57 +1,57 @@
-var total = 0;
 
-var totalSpan;
-var lotteryStatus;
+
+var prob = 5000;
 var button;
 
-var startTime = 0;
-
 var started = false;
+var total = 0;
 
-var secondsSpan;
-var minutesSpan;
+var entrants;
 
 function setup() {
   noCanvas();
-  button = select('#lottery');
+  entrants = select('#entrants');
+  entrants.input(updateProbability);
+
+
+  button = select('#start');
+  button.mousePressed(startLottery);
   noLoop();
-  button.mousePressed(function() {
-    loop();
-    startTime = millis();
-    started = true;
-  });
+}
 
-  totalSpan = select('#number');  
-  lotteryStatus = select('#status');
+function updateProbability() {
+  prob = entrants.html() / 10;
+  select('#chance').html(prob);
 
-  secondsSpan = select('#seconds');
-  minutesSpan = select('#minutes');
+  var notwinning = (prob - 1) / (prob);
+  var num = log(0.01)/log(notwinning);
+  select('#99percent').html(floor(num));
+
+}
+
+function startLottery() {
+  started = true;
+  total = 0;
+  loop();
 }
 
 function draw() {
   if (started) {
-    var r = floor(random(5000));
-    if (r == 100) {
-      lotteryStatus.html("You have won!");
+    var r = floor(random(prob));
+
+    var results = select('#results');
+
+    if (r == 1) {
+      results.html('You won!');
       noLoop();
+      //console.log('won lottery');
     } else {
-      lotteryStatus.html("Try again.");
+      results.html('Try again');
+      //console.log('lost lottery');
     }
     total++;
-    totalSpan.html(total);
 
-    var now = millis();
-    var timePassed = now - startTime;
-
-    var seconds = floor(timePassed / 1000);
-    var secs = seconds % 60;
-    var mins = floor(seconds / 60);
-
-    secondsSpan.html(secs);
-    minutesSpan.html(mins);
-
-
+    select('#total').html(total);
   }
+
 }
-
-

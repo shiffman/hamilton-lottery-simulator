@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Hamilton Lottery Simulator</title>
+  <script src="libraries/p5.js" type="text/javascript"></script>
+  <script src="libraries/p5.dom.js" type="text/javascript"></script>
+  <script src="libraries/p5.sound.js" type="text/javascript"></script>
+  <script src="sketch.js" type="text/javascript"></script>
+  <style>
+  body {
+    padding: 20px;
+  }
+  #entrants {
+    background-color: #CCC;
+    padding: 2px;
+  }
+  #chance {
+    background-color: #CCC;
+    padding: 2px;
+  }
+  #percent {
+    background-color: #CCC;
+    padding: 2px;
+  }
+  </style>
+</head>
+<body>
+  <h1>Hamilton Lottery Simulator</h1>
+  <p>
+    This simulator assumes <span id="tickets">10</span> pairs of tickets available each night with <span id="entrants" contenteditable>50000</span> people entering each lottery.
+  </p>
+  <p>
+    You have a 1 in <span id="chance" contenteditable>5000</span> chance of winning.
+  </p>
+  <p>
+    In order to have a <span id="percent" contenteditable>99</span>% chance of winning the lottery at least once, you must play <span id="times">~23023</span> times.
+  </p>
+  <p>
+    <button id="start">start entering lottery</button>
+  </p>
+  <p>
+    You have played <span id="total">0</span> times.
+  </p>
+  <p id = "results"></p>
+</body>
+</html>

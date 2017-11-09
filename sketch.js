@@ -58,7 +58,7 @@ function draw() {
 
     var results = select('#results');
 
-    if (r == 1) {
+    if (r == 0) {
       results.html('You won!');
       noLoop();
       //console.log('won lottery');

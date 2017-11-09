@@ -1,6 +1,6 @@
 
 
-var prob = 5000;
+var prob = 50000/23;
 var button;
 
 var started = false;
@@ -11,16 +11,24 @@ var entrants;
 function setup() {
   noCanvas();
   entrants = select('#entrants');
+  tickets = select('#tickets');
   entrants.input(updateProbability);
-
-
+  tickets.input(updateProbability);
+  
+  cityNY = select('#cityNY');
+  cityCH = select('#cityCH');
+  cityNY.mousePressed(updateProbability);
+  cityCH.mousePressed(updateProbability);
+  
   button = select('#start');
   button.mousePressed(startLottery);
+  
   noLoop();
 }
 
 function updateProbability() {
-  prob = entrants.html() / 10;
+  tickets.html(document.querySelector('input[name="city"]:checked').value);
+  prob = entrants.html() / tickets.html();
   select('#chance').html(prob);
 
   var notwinning = (prob - 1) / (prob);

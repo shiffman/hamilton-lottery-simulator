@@ -12,7 +12,7 @@
         padding: 20px;
       }
 
-      #entrants {
+      #entrants, #tickets {
         background-color: #CCC;
         padding: 2px;
       }
@@ -22,15 +22,23 @@
   <body>
     <h1>Hamilton Lottery Simulator</h1>
     <p>
-      This simulator assumes 10 pairs of tickets available each night with <span id="entrants" contenteditable>50000</span> people entering each lottery.
+      This simulator assumes <span id="tickets" contenteditable>23</span> pairs of tickets available each night with <span id="entrants" contenteditable>50000</span> people entering each lottery.
+    </p>
+
+	<p>
+		<form action="">
+		<label>Set number of ticket-pairs (can be set manually above):</label><br>
+		<input type="radio" name="city" value="23" id="cityNY" checked>Broadway - New York, NY (46 tickets)<br>
+		<input type="radio" name="city" value="22" id="cityCH">Chicago, IL (44 tickets)<br>
+		</form>
+	</p>
+	
+    <p>
+      You have a 1 in <span id="chance">2173.913043478261</span> chance of winning.
     </p>
 
     <p>
-      You have a 1 in <span id="chance">5,000</span> chance of winning.
-    </p>
-
-    <p>
-      In order to have a 99% chance of winning the lottery at least one time, you must play ~<span id="99percent">23,000</span>.
+      In order to have a 99% chance of winning the lottery at least one time, you must play ~<span id="99percent">10,000</span>.
     </p>
 
     <p>

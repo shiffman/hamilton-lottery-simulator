@@ -17,11 +17,13 @@ function setup() {
   
   cityNY = select('#cityNY');
   cityCH = select('#cityCH');
-  cityNY.mousePressed(updateProbability);
-  cityCH.mousePressed(updateProbability);
+  cityLA = select('#cityLA');
+  cityNY.mouseClicked(updateProbability);
+  cityCH.mouseClicked(updateProbability);
+  cityLA.mouseClicked(updateProbability);
   
   button = select('#start');
-  button.mousePressed(startLottery);
+  button.mouseClicked(startLottery);
   
   noLoop();
 }

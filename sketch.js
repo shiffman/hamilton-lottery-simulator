@@ -18,6 +18,9 @@ function setup() {
   cityNY = select('#cityNY');
   cityCH = select('#cityCH');
   cityLA = select('#cityLA');
+  cityNY.mouseClicked(updateCity);
+  cityCH.mouseClicked(updateCity);
+  cityLA.mouseClicked(updateCity);
   cityNY.mouseClicked(updateProbability);
   cityCH.mouseClicked(updateProbability);
   cityLA.mouseClicked(updateProbability);
@@ -28,8 +31,12 @@ function setup() {
   noLoop();
 }
 
+function updateCity() {
+tickets.html(document.querySelector('input[name="city"]:checked').value);
+
+}
+
 function updateProbability() {
-  tickets.html(document.querySelector('input[name="city"]:checked').value);
   prob = entrants.html() / tickets.html();
   select('#chance').html(prob);
 

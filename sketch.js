@@ -7,6 +7,7 @@ var started = false;
 var total = 0;
 
 var entrants;
+var results;
 
 function setup() {
   noCanvas();
@@ -27,6 +28,7 @@ function setup() {
   
   button = select('#start');
   button.mouseClicked(startLottery);
+  results = select('#results');
   
   noLoop();
 }
@@ -48,6 +50,7 @@ function updateProbability() {
 
 function startLottery() {
   started = true;
+  results.style('background-color', 'white');
   total = 0;
   loop();
 }
@@ -56,10 +59,9 @@ function draw() {
   if (started) {
     var r = floor(random(prob));
 
-    var results = select('#results');
-
     if (r == 0) {
       results.html('You won!');
+      results.style('background-color', 'rgb(200, 200, 200)');
       noLoop();
       //console.log('won lottery');
     } else {

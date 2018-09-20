@@ -8,55 +8,95 @@
     <script src="libraries/p5.sound.js" type="text/javascript"></script>
     <script src="sketch.js" type="text/javascript"></script>
     <style>
-      body {
+      
+
+      main {
         padding: 20px;
+        margin: 50px;
+        text-align: center;
+        box-shadow: 0px 0px 5px grey;
+        font-family: Roboto, sans-serif;
+      }
+
+      h1 {
+        box-shadow: 0px 0px 1px black;
+        padding: 2px 0px;
+        margin-top: 5px;
+      }
+
+      section {
+        box-shadow: 0px 0px 1px black;
+        padding: 5px 3px;
       }
 
       #entrants, #tickets {
-        background-color: #CCC;
-        padding: 2px;
+        box-shadow: 0px 0px 1px black;
+        padding: 2px 5px;
+      }
+
+      #results {
+        padding: 5px 12px;
+        width: 100px;     
+        margin-left: 44%;   
+      }
+      
+      #start {
+        box-shadow: -1px -1px 0px grey;
+        padding: 3px 10px;
+        font-size: 0.9em;
+        background-color: white;
+        text-shadow: 0px 0px 1px grey;
+      }
+
+      button:hover {
+        background-color: rgb(151, 109, 109);
       }
 
     </style>
   </head>
   <body>
-    <h1>Hamilton Lottery Simulator</h1>
-    <p>
-      This simulator assumes <span id="tickets" contenteditable>23</span> pairs of tickets available each night with <span id="entrants" contenteditable>50000</span> people entering each lottery.
-    </p>
+      <main>
+      <h1>Hamilton Lottery Simulator</h1>
 
-	<p>
-		<form action="">
-		<label>Set number of ticket-pairs (can be set manually above):</label><br>
-		<input type="radio" name="city" value="23" id="cityNY" checked>Broadway - New York, NY (46 tickets)<br>
-		<input type="radio" name="city" value="22" id="cityCH">Chicago, IL (44 tickets)<br>
-		<input type="radio" name="city" value="20" id="cityLA">Hollywood - Los Angeles, CA (40 tickets)<br>
-		</form>
-	</p>
-	
-    <p>
-      You have a 1 in <span id="chance">2173.913043478261</span> chance of winning.
-    </p>
+      <section>
+      <p>
+        This simulator assumes <span id="tickets" contenteditable>23</span> pairs of tickets available each night with <span id="entrants" contenteditable>50000</span> people entering each lottery.
+      </p>
 
     <p>
-      In order to have a 99% chance of winning the lottery at least one time, you must play ~<span id="99percent">10,000</span>.
+      <form action="">
+      <label>Set number of ticket-pairs (can be set manually above):</label><br>
+      <input type="radio" name="city" value="23" id="cityNY" checked>Broadway - New York, NY (46 tickets)<br>
+      <input type="radio" name="city" value="22" id="cityCH">Chicago, IL (44 tickets)<br>
+      <input type="radio" name="city" value="20" id="cityLA">Hollywood - Los Angeles, CA (40 tickets)<br>
+      </form>
     </p>
+    
+      <p>
+        You have a 1 in <span id="chance">2173.913043478261</span> chance of winning.
+      </p>
 
-    <p>
-      <button id="start">start entering lottery</button>
-    </p>
+      <p>
+        In order to have a 99% chance of winning the lottery at least one time, you must play ~<span id="99percent">10,000</span>.
+      </p>
 
-    <p>
-      You have played <span id="total">0</span> times.
-    </p>
-    <p id = "results">
+      <p>
+        <button id="start">start entering lottery</button>
+      </p>
 
-    </p>
+      <section id="how_many">
+      <p>
+        You have played <span id="total">0</span> times.
+      </p>
+      <p id = "results">
+
+      </p>
+      </section>
 
 
 
 
-
-
+    </section>
+    </main>
   </body>
 </html>
